@@ -1,0 +1,148 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Subscribtion Platform",
+        "description": "Swagger OpenApi description",
+        "contact": {
+            "email": "ahmed_bermawy@yahoo.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/post": {
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create new post",
+                "description": "This can create new post",
+                "operationId": "createUser",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "notify",
+                                    "website_id"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "this is fake post title"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "this is fake post description"
+                                    },
+                                    "notify": {
+                                        "type": "boolean"
+                                    },
+                                    "website_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/post/{post}": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "operationId": "d541500fddeeefc729d1cd2f58f9dc38",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "description": "post id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "view post "
+                    },
+                    "404": {
+                        "description": "No post found"
+                    }
+                }
+            }
+        },
+        "/api/subscribe": {
+            "post": {
+                "tags": [
+                    "Subscribe"
+                ],
+                "summary": "Create new post",
+                "description": "This can create new post",
+                "operationId": "createUser",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "first_name",
+                                    "last_name",
+                                    "email",
+                                    "website_id"
+                                ],
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string",
+                                        "example": "ahmed"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "example": "bermawy"
+                                    },
+                                    "email": {
+                                        "type": "email",
+                                        "example": "admin@example.com"
+                                    },
+                                    "website_id": {
+                                        "type": "integer",
+                                        "example": "[1]"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Post",
+            "description": "Post API"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
