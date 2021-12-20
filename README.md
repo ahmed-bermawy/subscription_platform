@@ -9,6 +9,14 @@ Subscribe to
 ### Create database 
 create database with name `subscription_platform`
 
+### Environment file
+copy .env.example to .env file
+and change these values
+
+    DB_DATABASE
+    DB_USERNAME
+    DB_PASSWORD
+
 ### Run migration with seed
     php artisan migrate:fresh --seed
 
